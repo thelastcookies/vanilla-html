@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo-uwu.png" />
+    <title>SERVER ERROR</title>
+    <style>
+      /* ============ antd Design Token：浅色主题（默认） ============ */
+      :root {
+        color-scheme: light;
+        --ant-body-bg: #fff;
+        --ant-text: rgba(0, 0, 0, 0.88);
+        --ant-text-secondary: rgba(0, 0, 0, 0.45);
+        --ant-primary: #1677ff;
+        --ant-primary-hover: #4096ff;
+        --ant-primary-active: #0958d9;
+        --ant-primary-shadow: rgba(5, 145, 255, 0.1);
+      }
+
+      /* ============ antd Design Token：深色主题（跟随系统自动切换） ============ */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --ant-body-bg: #141414;
+          --ant-text: rgba(255, 255, 255, 0.85);
+          --ant-text-secondary: rgba(255, 255, 255, 0.45);
+          --ant-primary: #1668dc;
+          --ant-primary-hover: #3c89e8;
+          --ant-primary-active: #1554ad;
+          --ant-primary-shadow: rgba(20, 76, 146, 0.4);
+        }
+      }
+
+      /* ============ 基础样式 ============ */
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        width: 100%;
+        font-family:
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          Arial,
+          'PingFang SC',
+          'Hiragino Sans GB',
+          'Microsoft YaHei',
+          sans-serif;
+        font-size: 14px;
+        color: var(--ant-text);
+        background-color: var(--ant-body-bg);
+        transition:
+          color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1),
+          background-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+      }
+      /* ============ 复刻 ant-design-vue 的 a-result 组件样式 ============ */
+      .ant-result {
+        width: 100%;
+        padding: 48px 0;
+        text-align: center;
+        box-sizing: border-box;
+      }
+      .ant-result-icon {
+        height: 174px;
+        margin-bottom: 24px;
+        box-sizing: border-box;
+      }
+      .ant-result-icon > img {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .ant-result-title {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 24px;
+        line-height: 1.3333;
+        color: var(--ant-text);
+      }
+      .ant-result-subtitle {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--ant-text-secondary);
+      }
+      .ant-result-extra {
+        margin-top: 24px;
+      }
+
+      .ant-btn-primary {
+        display: inline-block;
+        box-sizing: border-box;
+        height: 32px;
+        padding: 4px 15px;
+        font-size: 14px;
+        line-height: 1.5714;
+        font-weight: 400;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+        border: 1px solid var(--ant-primary);
+        border-radius: 6px;
+        color: #fff;
+        background-color: var(--ant-primary);
+        box-shadow: 0 2px 0 var(--ant-primary-shadow);
+        user-select: none;
+      }
+      .ant-btn-primary:hover {
+        border-color: var(--ant-primary-hover);
+        background-color: var(--ant-primary-hover);
+      }
+      .ant-btn-primary:active {
+        border-color: var(--ant-primary-active);
+        background-color: var(--ant-primary-active);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ant-result">
+      <!-- 复刻 Error.vue 的 #icon 插槽：内嵌 404 插画 -->
+      <div class="ant-result-icon">
+        <img
+          width="300"
+          height="168"
+          src="/error/500.png"
+          alt="500.png"
+        />
+      </div>
+      <div class="ant-result-title">SERVER ERROR</div>
+      <div class="ant-result-subtitle">对不起，服务器发生错误喵</div>
+      <!-- 复刻 #extra 插槽的「返回首页」按钮，跳转至根路径 -->
+      <div class="ant-result-extra">
+        <a class="ant-btn-primary" href="/">返回首页</a>
+      </div>
+    </div>
+  </body>
+</html>
